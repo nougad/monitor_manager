@@ -1,0 +1,22 @@
+
+
+MONITOR MANAGER
+===============
+
+Monitor Manager is a web interface for the window manager.
+
+This app was develop to controll wall panels remotly, and make it easy to play arround it
+
+
+USAGE
+=====
+
+    monitor_manager -p 8080
+
+
+INSTALL
+=======
+
+   apt-get install libx11-dev libglib2.0-dev libxmu-dev
+   gem install monitor_manager
+

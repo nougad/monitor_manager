@@ -1,0 +1,23 @@
+#!/usr/bin/env ruby
+
+
+pid = nil
+Signal.trap("INT") do
+  if pid
+    Process.kill("INT", pid)
+    Process.kill("TERM", pid)
+    Process.wait pid
+  end
+  exit
+end
+
+loop do
+  pid = fork do
+    file = File.dirname(File.dirname($0)) + "/lib/monitor_manager/app.rb"
+    exec "ruby #{file} #{ARGV.join(" ")}"
+  end
+  Process.wait pid
+  sleep 1
+end
+
+

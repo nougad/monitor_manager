@@ -1,0 +1,18 @@
+
+tr.active {
+  background: #5BB75B !important;
+}
+
+tr.active td {
+  background: #5BB75B !important;
+}
+
+form.action {
+  display: inline-block;
+  margin: 0;
+}
+
+.desktop-list {
+  text-align: center;
+}
+
