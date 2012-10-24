@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "monitor_manager"
   gem.require_paths = ["lib"]
   gem.version       = MonitorManager::VERSION
+  gem.add_dependency("sinatra")
+  gem.add_dependency("ruby-wmctrl")
 end
