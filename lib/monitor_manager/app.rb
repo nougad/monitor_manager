@@ -69,7 +69,6 @@ class MonitorManager < Sinatra::Base
   end
 
 
-  puts ARGV.inspect
   if ARGV.any?
       require 'optparse'
       OptionParser.new { |op|
