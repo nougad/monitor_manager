@@ -8,6 +8,7 @@ CHILDS = []
 
 class MonitorManager < Sinatra::Base
   settings.root = File.dirname(File.dirname(File.dirname(__FILE__)))
+  set :environment, :production
 
 
   get '/' do
