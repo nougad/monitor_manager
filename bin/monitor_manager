@@ -14,7 +14,9 @@ end
 loop do
   pid = fork do
     file = File.dirname(File.dirname($0)) + "/lib/monitor_manager/app.rb"
-    exec "ruby #{file} #{ARGV.join(" ")}"
+    require 'monitor_manager/app'
+    MonitorManager.run!
+
   end
   Process.wait pid
   sleep 1
