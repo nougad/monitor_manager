@@ -1,26 +1,34 @@
-# MonitorManager
 
-TODO: Write a gem description
 
-## Installation
+# MONITOR MANAGER
 
-Add this line to your application's Gemfile:
+Monitor Manager is a web interface for the window manager.
 
-    gem 'monitor_manager'
+This app was develop to controll wall panels remotly, and make it easy to play arround it.
 
-And then execute:
 
-    $ bundle
 
-Or install it yourself as:
+# USAGE
 
-    $ gem install monitor_manager
+    monitor_manager -p 8080
 
-## Usage
 
-TODO: Write usage instructions here
+# INSTALL
 
-## Contributing
+This gem uses ruby-wmctrl ( the ruby bindings to talk to the X server ). To run
+that, you will need some development libraries. In ubuntu you can run as root
+the following command.
+
+    apt-get install libx11-dev libglib2.0-dev libxmu-dev
+
+Once you have that install with gem in **ruby 1.9**.
+
+    gem install monitor_manager
+
+
+**This will NOT work in ruby 1.8.**
+
+# Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
