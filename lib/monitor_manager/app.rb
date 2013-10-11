@@ -19,6 +19,7 @@ class MonitorManager < Sinatra::Base
       window[:cmdline] = File.read("/proc/#{window[:pid]}/cmdline")
       window[:fullscreen] = (window[:state] || []).include?("_NET_WM_STATE_FULLSCREEN")
     end
+    @display_on = `xset -q | grep "Monitor is" | awk '{print $3}'`.strip.downcase == "on"
 
     erb :home
   end
@@ -58,6 +59,11 @@ class MonitorManager < Sinatra::Base
     redirect back
   end
 
+  post '/display' do
+    op = params[:mode]
+    exec %{xset dpms force #{op}}
+    redirect back
+  end
 
   post '/browse' do
     CHILDS << fork do

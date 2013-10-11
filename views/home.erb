@@ -33,7 +33,7 @@
   </tbody>
 </table>
 
-<div class="span6">
+<div class="span4">
   <form action="/command" method="post">
     <legend>New Program</legend>
     <label for=command>Command</label>
@@ -41,12 +41,22 @@
     <button type=submit class="btn btn-primary">Execute</button>
   </form>
 </div>
-<div class="span6">
+<div class="span4">
   <form action="/browse" method="post">
     <legend>New Web</legend>
     <label for=url>Url</label>
     <input type=text name=url class="input-xlarge" placeholder="http://youtube.com/watch?v=ADF123BFJX"/><br/>
     <button type=submit class="btn btn-primary">Execute</button>
+  </form>
+</div>
+<div class="span4">
+  <form action="/display" method="post">
+    <legend>Display</legend>
+    <% if @display_on then %>
+    <button type="submit" name="operation" value="off" class="btn btn-primary">Off</button>
+    <% else %>
+    <button type="submit" name="operation" value="on" class="btn btn-primary">On</button>
+    <% end %>
   </form>
 </div>
 </div>
